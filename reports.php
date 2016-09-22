@@ -98,62 +98,48 @@
             </div>
             <!-- /.row -->
 			<div class="row">
-                <div class="col-lg-12  " >
-                    <div class="panel panel-red  ">
-                        <div class="panel-heading ">
-                            Alec Melchor
-							<a href="#"><i class="fa fa-times-circle-o pull-right" style="color:white; font-size:20pt;"></i></a>
-                        </div>
-                        <div class="panel-body">
-                            <p>Nagmahal, Nasaktan, Nag comment.</p>
-                        </div>
-                       <div class="panel-footer">
-                           Date Reported: 09/18/2016
-                        </div>
+
+                    <div class="col-lg-12  " >
+                        <?php 
+
+                            mysql_connect("localhost", "root","") or die(mysql_error());
+                            mysql_select_db("webapp") or die("Cannot connect to database");
+                            $query = mysql_query("Select * from posts WHERE reports > 2");
+
+                            while ($row = mysql_fetch_assoc($query)) {
+                                $tablepost = $row['submittext'];
+                                $tablename = $row['sender'];
+                                $timestamp = $row['datereported'];
+
+                                Print '
+                                <div class="panel panel-red  ">
+                                    <div class="panel-heading "> ';
+                                        Print $tablename; Print '
+                                        <a onclick="deletepost('.$row['postid'].')" href="#"><i class="fa fa-times-circle-o pull-right" style="color:white; font-size:20pt;"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>';Print $tablepost; Print'</p>
+                                    </div>
+                                   <div class="panel-footer">
+                                       Date Reported:'; echo date('m/d/Y', strtotime($timestamp)); Print '
+                                    </div>
+                                </div>
+                                ';
+                            }
+                        ?>
                     </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-12">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            John Meow 
-                        </div>
-                        <div class="panel-body">
-                            <p>Love kay nako siya pero naa na siyay uyab.</p>
-                        </div>
-						<div class="panel-footer">
-                           Date Reported: 09/18/2016
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-12">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            Jm Gula
-                        </div>
-                        <div class="panel-body">
-                            <p>Fvck this shit maderfacker</p>
-                        </div>
-                     <div class="panel-footer">
-                           Date Reported: 09/18/2016
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-				  <div class="col-lg-12">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            John Meow 
-                        </div>
-                        <div class="panel-body">
-                            <p>fuck boy man ko</p>
-                        </div>
-						<div class="panel-footer">
-                           Date Reported: 09/18/2016
-                        </div>
-                    </div>
-                </div>
+
+                    <script>
+                            function deletepost(id)
+                            {
+                            var r=confirm("Are you sure you want to delete this post?");
+                            if (r==true)
+                              {
+                                window.location.assign("deletereportpost.php?id=" + id);
+                              }
+                            }
+                    </script>
+               
             </div>
             <!-- /.row -->
             </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2016 at 05:21 PM
+-- Generation Time: Sep 22, 2016 at 04:24 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -43,12 +43,13 @@ CREATE TABLE `comments` (
 CREATE TABLE `posts` (
   `postid` int(11) NOT NULL,
   `userpost` int(11) DEFAULT NULL,
-  `submittext` varchar(255) DEFAULT NULL,
+  `submittext` text,
   `sender` varchar(255) NOT NULL,
   `senderpic` varchar(255) NOT NULL,
   `hrs` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userpostid` int(11) NOT NULL,
-  `reports` int(11) NOT NULL
+  `reports` int(11) NOT NULL,
+  `datereported` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -107,12 +108,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
