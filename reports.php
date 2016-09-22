@@ -132,7 +132,7 @@
                     <script>
                             function deletepost(id)
                             {
-                            var r=confirm("Are you sure you want to delete this post?");
+                            var r=confirm("Are you sure you want to delete this reported post?");
                             if (r==true)
                               {
                                 window.location.assign("deletereportpost.php?id=" + id);
