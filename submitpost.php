@@ -23,13 +23,13 @@ if ($exists > 0) {
 			$tablename = "Anonymous";
 			$_SESSION['postid'] = $table_idpost;
 			mysql_query("INSERT INTO posts (submittext,sender,senderpic,userpostid) VALUES ('$post','$tablename','$tablepic','$id')");
-			Print '<script>window.location.assign("userPagev2.php");</script>';
+			header("location: userPagev2.php");
 		}else {
 			$tablepic = $row['profpic'];
 			$tablename = $row['firstname'];
 			$_SESSION['postid'] = $table_idpost;
 			mysql_query("INSERT INTO posts (submittext,sender,senderpic,userpostid) VALUES ('$post','$tablename','$tablepic','$id')");
-			Print '<script>window.location.assign("userPagev2.php");</script>';
+			header("location: userPagev2.php");
 		}
 	}
 }
