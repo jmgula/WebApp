@@ -8,6 +8,7 @@
 		$id = $_GET['id'];
 		mysql_query("DELETE FROM posts WHERE postid='$id'");
 		mysql_query("DELETE FROM comments WHERE postid='$id'");
+		mysql_query("DELETE FROM limitreport WHERE postid='$id'");
 		header("location: userPagev2.php");
 	}
 ?>
