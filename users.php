@@ -292,7 +292,7 @@
 						var r=confirm("Are you sure you want to delete this user?");
 						if (r==true)
 						  {
-						  	window.location.assign("delete.php?id=" + id);
+						  	window.location.assign("delete.php?userid=" + id);
 						  }
 						}
 	</script>
