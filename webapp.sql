@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2016 at 04:24 PM
+-- Generation Time: Sep 24, 2016 at 06:08 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -33,6 +33,27 @@ CREATE TABLE `comments` (
   `name` varchar(32) NOT NULL,
   `postid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `limitreport`
+--
+
+CREATE TABLE `limitreport` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `postid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `limitreport`
+--
+
+INSERT INTO `limitreport` (`id`, `userid`, `postid`) VALUES
+(16, 12100001, 20),
+(17, 12100002, 20),
+(18, 12100004, 20);
 
 -- --------------------------------------------------------
 
@@ -74,8 +95,7 @@ INSERT INTO `users` (`userid`, `password`, `firstname`, `lastname`, `profpic`) V
 (12100001, '12100001', 'John Mark', 'Amit', 'Amit.png'),
 (12100002, '12100002', 'Kristopher', 'Cabahug', 'Kristopher.jpg'),
 (12100003, '12100003', 'Jose Maria', 'Gula', 'jm.jpg'),
-(12100004, '12100004', 'Alec Job', 'Melchor', 'Alec.jpg'),
-(12100005, '12100005', 'Zamaickah', 'Serato', 'Zam.png');
+(12100004, '12100004', 'Alec Job', 'Melchor', 'Alec.jpg');
 
 --
 -- Indexes for dumped tables
@@ -86,6 +106,12 @@ INSERT INTO `users` (`userid`, `password`, `firstname`, `lastname`, `profpic`) V
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`commentid`);
+
+--
+-- Indexes for table `limitreport`
+--
+ALTER TABLE `limitreport`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `posts`
@@ -108,17 +134,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `limitreport`
+--
+ALTER TABLE `limitreport`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12100006;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12100005;
 --
 -- Constraints for dumped tables
 --
