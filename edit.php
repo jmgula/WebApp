@@ -49,6 +49,7 @@ function renderForm($userid, $firstname, $lastname, $error)
 
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="resource/images/logo2.png">
 
 
 </head>
@@ -73,7 +74,7 @@ function renderForm($userid, $firstname, $lastname, $error)
                         <li><a href="settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="indexv2.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -90,11 +91,9 @@ function renderForm($userid, $firstname, $lastname, $error)
                             <a href="users.php"><i class="fa fa-users fa-fw"></i> User Management</a>
                         </li>
 
-                        <li>
-                            <a href="email.html"><i class="fa fa-envelope-o fa-fw"></i> Emails</a>
-                        </li>   
+                         
 						 <li>
-                            <a href="reports.html"><i class="fa fa-warning fa-fw" style="color:red;"></i>Reported Posts</a>
+                            <a href="reports.html"><i class="fa fa-warning fa-fw" style="color:red;"></i> Reported Posts</a>
                         </li>     
                     </ul>
                 </div>
@@ -108,7 +107,7 @@ function renderForm($userid, $firstname, $lastname, $error)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Users</h1>
+                    <h1 class="page-header">User Management</h1>
                 </div>
                 </div>
             <!-- /.row -->
@@ -117,7 +116,7 @@ function renderForm($userid, $firstname, $lastname, $error)
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            User Management
+                        
    
   
                         </div>
@@ -253,7 +252,7 @@ or die(mysql_error());
 
 // once saved, redirect back to the view page
 
-header("Location: view.php");
+header("Location: users.php");
 
 }
 

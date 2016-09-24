@@ -24,6 +24,7 @@
 
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="resource/images/logo2.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,9 +55,7 @@
                         <i class="fa fa-user fa-fw" style="color:#FFCC33;"></i>  <i class="fa fa-caret-down" style="color:#FFCC33;"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
+                       
                         <li><a href="indexv2.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
@@ -74,11 +73,9 @@
                             <a href="users.php"><i class="fa fa-users fa-fw"></i> User Management</a>
                         </li>
 
-                        <li>
-                            <a href="email.html"><i class="fa fa-envelope-o fa-fw"></i> Emails</a>
-                        </li>
+                      
 						 <li>
-							<a href="reports.php"><i class="fa fa-warning fa-fw" style="color:red;"></i>Reported Posts</a>
+							<a href="reports.php"><i class="fa fa-warning fa-fw" style="color:red;"></i> Reported Posts</a>
                         </li> 
      
                     </ul>
@@ -104,12 +101,13 @@
 
                             mysql_connect("localhost", "root","") or die(mysql_error());
                             mysql_select_db("webapp") or die("Cannot connect to database");
-                            $query = mysql_query("Select * from posts WHERE reports > 2");
+                            $query = mysql_query("Select * from posts WHERE reports > 2 ORDER BY datereported DESC");
 
                             while ($row = mysql_fetch_assoc($query)) {
                                 $tablepost = $row['submittext'];
                                 $tablename = $row['sender'];
                                 $timestamp = $row['datereported'];
+                                $tablereports = $row['reports'];
 
                                 Print '
                                 <div class="panel panel-red  ">
@@ -121,7 +119,7 @@
                                         <p>';Print $tablepost; Print'</p>
                                     </div>
                                    <div class="panel-footer">
-                                       Date Reported:'; echo date('m/d/Y', strtotime($timestamp)); Print '
+                                       Latest date reported:'; echo date('m/d/Y', strtotime($timestamp));  echo "<br> Total reports: " . $tablereports; Print '
                                     </div>
                                 </div>
                                 ';

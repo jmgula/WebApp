@@ -24,6 +24,7 @@
 
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="resource/images/logo2.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,9 +115,8 @@
                         <i class="fa fa-user fa-fw"  style="color:#FFCC33;"></i>  <i class="fa fa-caret-down"  style="color:#FFCC33;"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
+                      
+                     
                         <li><a href="indexv2.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
@@ -134,11 +134,9 @@
                             <a href="users.php"><i class="fa fa-users fa-fw"></i> User Management</a>
                         </li>
 
-                        <li>
-                            <a href="email.html"><i class="fa fa-envelope-o fa-fw"></i> Emails</a>
-                        </li>   
+                        
 						 <li>
-                            <a href="reports.php"><i class="fa fa-warning fa-fw" style="color:red;"></i>Reported Posts</a>
+                            <a href="reports.php"><i class="fa fa-warning fa-fw" style="color:red;"></i> Reported Posts</a>
                         </li>    
                     </ul>
                 </div>
@@ -151,15 +149,36 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Users</h1>
+                    <h1 class="page-header">User Management</h1>
                 </div>
                 <!--SEARCH -->
-                  
+                    <?php
 
 
-                          <form method="post" id="searchform" class="input-group-btn">
+                                include "connect.php";
+
+                                $sql = "SELECT * FROM users ";
+
+
+                                if(isset($_POST['search'])){
+
+                                 $search = mysql_real_escape_string($_POST['search']);
+
+                                 $sql .= "WHERE userid LIKE '{$search}%'"; 
+                                
+                                }   
+
+
+
+                                $query = mysql_query($sql) or die(mysql_error());
+
+
+                                ?>
+
+
+                          <form method="post" id="searchform" class="input-group-btn" >
              
-								<div class="pull-left" style="margin-left:15px;">
+								<div class="pull-left" style="margin-left:15px; width: 97%;">
 									<i class="glyphicon glyphicon-search"></i>
 									<input type="text" class="form-control" name="search" id="search" placeholder="Search..." required="required">
 								</div>
@@ -178,7 +197,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            User Management
+                         
    
   
                         </div>
@@ -190,79 +209,57 @@
 
                                     <!--DATABASE -->
 
-                                    <?php
-
-                                    $output = NULL;
-
-
                                                                      
-                                    if(isset($_POST['search'])){
 
-
-                                    $connection = mysqli_connect("localhost","root","","webapp") or die ("ERROR" .mysqli_error($connection));
-                                    $search = $connection->real_escape_string($_POST['search']);
-
-
-                                     $sql = "SELECT * FROM users WHERE userid LIKE '{$search}%'"; 
-
-
-                                    $result = mysqli_query ($connection, $sql) or die ("ERROR" .mysqli_error($connection));
-                                    
-                                    if($result->num_rows > 0){
-                                        while ($rows =$result->fetch_assoc())
-                                            {
-                                               
-
-   
-
-            echo "<tr>";
-            echo '<td>' . $rows['userid'] . '</td>';
-            echo '<td>' . $rows['firstname'] . '</td>';
-            echo '<td>' . $rows['lastname'] . '</td>';
-            echo '<td><a href="edit.php?userid=' . $rows['userid'] .'">  <button type="button" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></button></a>
-                      <a onclick="deleteUser('.$rows['userid'].')">  <button type="button" class="btn btn-warning btn-circle "><i class="fa fa-times"></i></button></a>
-
-            </td>';
-                            
-                    
-
-
-                   echo "</tr>";
-
-
-        }
-
-    
-    }else
-    {
-
-          
-        
-    
-        Print '<script>alert("No Result!");</script>';
-}
-
-} 
-
-
-?>
-
-                                    
-
-            <thead>
+                              <thead>
                                         <tr>
                                             <th>ID #</th>
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Action</th>
                                         </tr>
+                                            <?php 
+                                                 if(mysql_num_rows($query) >0 ){
+                                                while ($row = mysql_fetch_array($query))
+
+                                                {   
+
+
+
+
+                                             ?>
+
                                     </thead>
                                     <tbody>
-                                        <tr>                        
+                                        <tr>   
+                                            <td><?php echo $row['userid']; ?></td>
+                                            <td><?php echo $row['firstname']; ?></td>
+                                            <td><?php echo $row['lastname']; ?></td>
+                                            <td><?php Print '<a href="edit.php?userid=' . $row['userid'] .'">  <button type="button" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="#"onclick="deleteUser('.$row['userid'].')">  <button type="button" class="btn btn-warning btn-circle "><i class="fa fa-times"></i></button></a>
+                                            </td>
+                                            ';
+                                            ?>
+                                        </tr>                     
                                  
+                                            <?php 
 
-
-
+                                                 
+                                                    
+                                                    }
+                                                }else
+                                                {
+                                                            Print '<script>alert("No Result Found!");</script>';
+                                                            ?>
+                                                            <script>
+                                                            window.location.assign("users.php");
+                                                            </script>
+                                                            <?php
+                                                }
+                                            
+                                               ?>
+                                               
+ 
 
                 <!-- END DATABASE -->
                                     </tbody>
