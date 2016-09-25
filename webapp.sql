@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2016 at 06:08 PM
+-- Generation Time: Sep 25, 2016 at 10:43 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -46,15 +46,6 @@ CREATE TABLE `limitreport` (
   `postid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `limitreport`
---
-
-INSERT INTO `limitreport` (`id`, `userid`, `postid`) VALUES
-(16, 12100001, 20),
-(17, 12100002, 20),
-(18, 12100004, 20);
-
 -- --------------------------------------------------------
 
 --
@@ -95,7 +86,8 @@ INSERT INTO `users` (`userid`, `password`, `firstname`, `lastname`, `profpic`) V
 (12100001, '12100001', 'John Mark', 'Amit', 'Amit.png'),
 (12100002, '12100002', 'Kristopher', 'Cabahug', 'Kristopher.jpg'),
 (12100003, '12100003', 'Jose Maria', 'Gula', 'jm.jpg'),
-(12100004, '12100004', 'Alec Job', 'Melchor', 'Alec.jpg');
+(12100004, '12100004', 'Alec Job', 'Melchor', 'Alec.jpg'),
+(12100005, '12100005', 'Zamaickah', 'Serato', 'Zam.png');
 
 --
 -- Indexes for dumped tables
@@ -139,17 +131,17 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `limitreport`
 --
 ALTER TABLE `limitreport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12100005;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12100006;
 --
 -- Constraints for dumped tables
 --
