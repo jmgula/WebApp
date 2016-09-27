@@ -32,7 +32,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-5">
-					
+						<ul class="nav navbar-nav">
+							<li><a href="userPagev2.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+					        
+						</ul>
 					</div>
 					<div class="col-sm-3">
 						<ul class="nav navbar-nav">
@@ -41,6 +44,40 @@
 					</div>
 					<div class="col-sm-4">
 
+			       <ul class="nav navbar-nav navbar-right">
+			
+						  <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          		<img src="resource/images/<?php Print $pic; ?>" class="img-circle" id="userPic">
+				          	</span> <?php Print $fname; ?> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          <li>
+			          	<div class="navbar-content">
+			          		<div class="row">
+			          			<div class="col-md-5">
+			          				<img src="resource/images/<?php Print $pic; ?>" alt="" class="img-circle" style="heigth:100px;width:100px;">
+												<p class="text-center small"><a href="#">Change Photo</a></p>
+			          			</div>
+											<div class="col-md-7">
+												<span><strong><?php Print $fname; ?> <?php Print $lname; ?></strong></span>
+												<p class="text-muted small"><?php Print $id ?></p>
+											</div>
+			          		</div>
+			          	</div>
+									<div class="navbar-footer">
+										<div class="navbar-footer-content">
+											<div class="row">
+												<div class="col-md-6">
+													<a href="#changePass" data-toggle="modal" class="btn btn-success btn-sm">Change Password</a>
+												</div>
+												<div class="col-md-6">
+													<a href="signout.php" class="btn btn-success btn-sm pull-right">Sign Out</a>
+												</div>
+											</div>
+										</div>
+									</div>
+			          </li>
+			          </ul>
 			        </li>
 						</ul>
 					</div>

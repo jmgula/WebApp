@@ -36,7 +36,7 @@
 					<div class="col-sm-5">
 						<ul class="nav navbar-nav">
 							<li><a href="userPagev2.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-					        <li><a href="#message" data-toggle="modal"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+					        
 						</ul>
 					</div>
 					<div class="col-sm-3">
@@ -46,12 +46,7 @@
 					</div>
 					<div class="col-sm-4">
 						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<div class="inner-addon right-addon">
-									<i class="glyphicon glyphicon-search"></i>
-									<input type="text" class="form-control" placeholder=" Search ID#" name="tfSearch">
-								</div>
-			        </li>
+							
 						  <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			          		<img src="resource/images/<?php Print $pic; ?>" class="img-circle" id="userPic">
@@ -62,13 +57,13 @@
 			          		<div class="row">
 			          			<div class="col-md-5">
 			          				<img src="resource/images/<?php Print $pic; ?>" alt="" class="img-circle" style="heigth:100px;width:100px;">
-												<p class="text-center small"><a href="#">Change Photo</a></p>
+												
 			          			</div>
 											<div class="col-md-7">
 												<span><strong><?php Print $fname; ?> <?php Print $lname; ?></strong></span>
 												<p class="text-muted small"><?php Print $id ?></p>
 												<div class="divider"></div>
-												<a href="#" class="btn btn-success btn-sm">View Profile</a>
+												
 											</div>
 			          		</div>
 			          	</div>
