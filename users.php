@@ -180,7 +180,7 @@
              
 								<div class="pull-left" style="margin-left:15px; width: 97%;">
 									<i class="glyphicon glyphicon-search"></i>
-									<input type="text" class="form-control" name="search" id="search" placeholder="Search..." required="required">
+									<input type="text" class="form-control" name="search" id="search" placeholder="Search ID number..." required="required">
 								</div>
                             </form>
                         

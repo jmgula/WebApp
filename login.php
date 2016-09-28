@@ -12,9 +12,19 @@
 	$table_fname = "";
 	$table_lname = "";
 	$table_pic = "";
-	if (($id == "admin") && ($password == "admin")) {
-		Print '<script>window.location.assign("users.php");</script>';
+	
+	if ($id == "admin") {
+		if ($password == "admin") {
+			Print '<script>window.location.assign("users.php");</script>';
+		}else{
+			Print '<script>alert("Incorrect Password!");</script>';
+			Print '<script>window.location.assign("indexv2.html");</script>';
+		}
+	}else{
+		Print '<script>alert("Incorrect Username!");</script>';
+		Print '<script>window.location.assign("indexv2.html");</script>';
 	}
+
 	if ($exists > 0) //If there are no returning rows or no existing username
 	{
 		while ($row = mysql_fetch_assoc($query)) //Display all rows from query
