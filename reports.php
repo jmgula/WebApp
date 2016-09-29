@@ -101,7 +101,7 @@
 
                             mysql_connect("localhost", "root","") or die(mysql_error());
                             mysql_select_db("webapp") or die("Cannot connect to database");
-                            $query = mysql_query("Select * from posts WHERE reports > 2 ORDER BY datereported DESC");
+                            $query = mysql_query("Select * from posts WHERE reports > 0 ORDER BY reports DESC");
 
                             while ($row = mysql_fetch_assoc($query)) {
                                 $tablepost = $row['submittext'];
