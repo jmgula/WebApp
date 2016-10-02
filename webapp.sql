@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2016 at 02:24 AM
+-- Generation Time: Oct 02, 2016 at 02:51 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -55,7 +55,7 @@ CREATE TABLE `limitreport` (
 CREATE TABLE `posts` (
   `postid` int(11) NOT NULL,
   `userpost` int(11) DEFAULT NULL,
-  `submittext` text,
+  `submittext` varchar(255) DEFAULT NULL,
   `sender` varchar(255) NOT NULL,
   `senderpic` varchar(255) NOT NULL,
   `hrs` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -63,6 +63,15 @@ CREATE TABLE `posts` (
   `reports` int(11) NOT NULL,
   `datereported` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`postid`, `userpost`, `submittext`, `sender`, `senderpic`, `hrs`, `userpostid`, `reports`, `datereported`) VALUES
+(1, NULL, 'this is a post', 'Jose Maria', 'jm.jpg', '2016-10-02 12:48:17', 12100003, 0, '0000-00-00 00:00:00'),
+(2, NULL, 'this is a post\r\nthis is a postthis is a postthis is a postthis is a postthis is a post\r\nthis is a postthis is a postthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a p', 'Jose Maria', 'jm.jpg', '2016-10-02 12:49:08', 12100003, 0, '0000-00-00 00:00:00'),
+(3, NULL, 'this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post ', 'Jose Maria', 'jm.jpg', '2016-10-02 12:49:24', 12100003, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -126,17 +135,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `limitreport`
 --
 ALTER TABLE `limitreport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --

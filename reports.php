@@ -119,7 +119,7 @@
                                         <p>';Print $tablepost; Print'</p>
                                     </div>
                                    <div class="panel-footer">
-                                       Latest date reported:'; echo date('m/d/Y', strtotime($timestamp));  echo "<br> Total reports: " . $tablereports; Print '
+                                       Last date reported:'; echo date('m/d/Y', strtotime($timestamp));  echo "<br> Total reports: " . $tablereports; Print '
                                     </div>
                                 </div>
                                 ';

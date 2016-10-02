@@ -56,7 +56,7 @@
 			          		<div class="row">
 			          			<div class="col-md-5">
 			          				<img src="resource/images/<?php Print $pic; ?>" alt="" class="img-circle" style="heigth:100px;width:100px;">
-												<p class="text-center small"><a href="#">Change Photo</a></p>
+												
 			          			</div>
 											<div class="col-md-7">
 												<span><strong><?php Print $fname; ?> <?php Print $lname; ?></strong></span>
@@ -102,7 +102,15 @@
     							BSICT
 	    					</div>
 	    				</div>
-	    				
+	    					<div class="profile-usermenu">
+	    					<ul class="nav">
+	    						<li>
+	    							<a href="#rules" data-toggle="modal">
+	    							<i class="glyphicon glyphicon-flag"></i>
+	    							Rules </a>
+	    						</li>
+	    					</ul>
+    					</div>
 					</div>
 				</div>
 
@@ -151,7 +159,7 @@ if ($error != '')
 
 {
 
-echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div>';
+echo '<div style="padding:4px; margin-left: 15px; border:0px solid red; color:red; width:110%">'.$error.'</div>';
 
 }
 
@@ -176,7 +184,8 @@ echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div
 							</div>
 							<div class="modal-footer">
 									
-	<textarea style="width:100%;  resize:none;" name="submittext"><?php echo $submittext; ?>	</textarea>
+	<textarea style="width:100%;  resize:none;" name="submittext"><?php echo $submittext;?></textarea>
+
 
 
 
@@ -192,9 +201,6 @@ echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div
 
 </form>
 
-</body>
-
-</html>
 
 <?php
 
@@ -245,7 +251,7 @@ if ($submittext == '' )
 
 // generate error message
 
-$error = 'ERROR: Please fill in all required fields!';
+$error = 'Please fill out this field.';
 
 
 
@@ -359,10 +365,62 @@ echo 'Error!';
 }
 
 ?>
-					
-			
+<div class="modal" id="viewPic" role="dialog">
+      <div class="modal-dialog">>
+          <div class="modal-content mView" id="viewPic2">
+            <img src="resource/images/<?php Print $pic ?>" class="center-block">
+          </div>
+      </div>
+    </div>
+		<div class="modal" id="changePass" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header"><h4><b>Change Password</b></h4></div>
+					<div class="modal-body" style="padding:10px;">
+						<form action="changepass.php" method="POST">
+							<div class="form-group form-inline">
+								<label for="pwd"> Password:</label><br>
+								<input type="password" name="oldpassword" id="pwd" class="form-control" required="required">
+							</div>
+							<div class="form-group form-inline">
+								<label for="pwd">New Password:</label>
+								<input type="password" name="newpassword" id="pwd" class="form-control" required="required">
+							</div>
+							<div class="form-group form-inline">
+								<label for="pwd">Confirm New Password:</label>
+								<input type="password" name="confnewpass" id="pwd" class="form-control" required="required">
+							</div>
+							<button type="submit" class="btn btn-success btn-sm">Change Password</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
 
+<div class="modal" id="rules" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header"><h4><b>Rules!</b></h4></div>
+					<div class="modal-body">
+						<ol>
+							<li>No spamming.</li>
+							<li>No lewd posts.</li>
+							<li>No bullying.</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
 
+<script src="resource/js/jquery-3.1.0.min.js"></script>
+		<script src="resource/bootstrap/js/bootstrap.min.js"></script>
+		<script>
+      $(document).ready(function(){
+        $("[data-hover='tooltip']").tooltip();
+      });
+    </script>
+	</body>
+</html>
 
 
 

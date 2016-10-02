@@ -71,9 +71,8 @@ function renderForm($userid, $firstname, $lastname, $error)
                         <i class="fa fa-user fa-fw" style="color:#FFCC33;"></i>  <i class="fa fa-caret-down" style="color:#FFCC33;"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
+                       
+                       
                         <li><a href="indexv2.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
@@ -93,7 +92,7 @@ function renderForm($userid, $firstname, $lastname, $error)
 
                          
 						 <li>
-                            <a href="reports.html"><i class="fa fa-warning fa-fw" style="color:red;"></i> Reported Posts</a>
+                            <a href="reports.php"><i class="fa fa-warning fa-fw" style="color:red;"></i> Reported Posts</a>
                         </li>     
                     </ul>
                 </div>
@@ -178,9 +177,6 @@ echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div
 
           
 
-</body>
-
-</html>
 
 <?php
 
@@ -343,3 +339,21 @@ echo 'Error!';
 }
 
 ?>
+
+ <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="bower_components/raphael/raphael-min.js"></script>
+    <script src="bower_components/morrisjs/morris.min.js"></script>
+    <script src="js/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+</body>
+</html>

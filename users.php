@@ -38,9 +38,11 @@
     #display_results {
     
     color: black;
-    
-
-    background: #CCCCFF;
+    width: 96%;
+    margin-left: 20px;
+    background: white;
+    margin-top: 5px;
+    margin-bottom: -10px;
     }
 
 
