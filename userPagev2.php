@@ -158,7 +158,7 @@
 									<div class="media">
 										<a class="pull-left" href="#"><img class="media-object" src="resource/images/'; Print $tablepic; Print '"></a>
 										<div class="media-body">
-											<a href="#"><strong>'; Print $tablename; Print '</strong></a><span class="time">'; echo " ";echo date('m/d/Y', strtotime($timestamp));  Print '</span><br>';
+											<strong style="color:#2E7D32">'; Print $tablename; Print '</strong><span class="time">'; echo " ";echo date('m/d/Y', strtotime($timestamp));  Print '</span><br>';
 											echo nl2br($tablepost);
 										Print '
 										</div>
@@ -178,7 +178,7 @@
 									<div class="media">
 										<a class="pull-left" href="#"><img class="media-object" src="resource/images/'; Print $tablepic; Print '"></a>
 										<div class="media-body">
-											<a href="#"><strong>'; Print $tablename; Print '</strong></a><span class="time">'; echo " ";echo date('m/d/Y', strtotime($timestamp));  Print '</span><br>';
+											<strong style="color:#2E7D32">'; Print $tablename; Print '</strong><span class="time">'; echo " ";echo date('m/d/Y', strtotime($timestamp));  Print '</span><br>';
 											echo nl2br($tablepost);
 										Print '
 										</div>
