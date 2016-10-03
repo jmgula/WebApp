@@ -112,9 +112,10 @@
 	    					</ul>
     					</div>
 					</div>
+					<iframe src="http://usc.edu.ph/" width="100%" height="400" style="border:none;overflow:hidden;margin-top:10px;" scrolling="yes" frameborder="0" allowTransparency="true"></iframe>
 				</div>
 
-				<div class="col-sm-6">
+			
 
 					<!--Status-->
 					<?php
@@ -175,9 +176,9 @@ echo '<div style="padding:4px; margin-left: 15px; border:0px solid red; color:re
 
 
 
-<div class="col-sm-6"  >
+<div class="col-sm-7"  >
 					<div class="modal-dialog">
-						<div class="modal-content">
+						<div class="modal-content" style="margin-top:-30px;">
 							<div class="modal-header"><h4><b>Edit Post</b></h4></div>
 							<div class="modal-body">
 								
@@ -197,10 +198,15 @@ echo '<div style="padding:4px; margin-left: 15px; border:0px solid red; color:re
 						</div>
 					</div>
 				</div>
-</div>
+
+
+
 
 </form>
-
+<div class="col-sm-2">
+							<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftodayscarolinian%2F%3Ffref%3Dts&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+							<iframe class="marg" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwarriorsturf%2F%3Ffref%3Dts&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+				</div>
 
 <?php
 
