@@ -160,7 +160,6 @@
 									mysql_select_db("webapp") or die("Cannot connect to database");
 									$query = mysql_query("SELECT * FROM comments");
 
-									$exists = mysql_num_rows($query);
 
 									while ($row = mysql_fetch_assoc($query)) {
 										$tableid = $row['commentid'];
@@ -168,6 +167,7 @@
 										$tablepic = $row['profpic'];
 										$tablename = $row['name'];
 										$tablepostid = $row['postid'];
+										$tableuserid = $row['userid'];
 
 
 										if ($postid == $tablepostid) {
@@ -179,13 +179,34 @@
 														<strong style="color:#2E7D32">'; Print $tablename; Print '</strong><br>';
 														Print $tablecomment;
 														Print '
-														</div>
+														</div>';
+														if ($id == $tableuserid) {
+															Print '
+																<ul class="list-inline list-unstyled interact-sec">
+																		<li><a href="#Edit"  data-hover="tooltip" data-placement="bottom" data-original-title="Edit"><span class="fa fa-pencil"></span></a></li>
+																		<li>|</li>
+																		<li><a href="#Delete"  onclick="deletecomment('.$row['commentid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Delete"><span class="fa fa-times"></span></a></li>
+																</ul>
+															';
+														}
+														Print '
 														</div>
 														</div>
 												';
 										}
 									}
 								?>
+
+								<script>
+									function deletecomment(id)
+									{
+									var r=confirm("Are you sure you want to delete this comment?");
+									if (r==true)
+									  {
+									  	window.location.assign("deletecomment.php?id=" + id);
+									  }
+									}
+								</script>
 
 							</div>
 							<div class="modal-footer">
