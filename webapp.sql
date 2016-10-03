@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2016 at 02:51 PM
+-- Generation Time: Oct 03, 2016 at 03:35 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -31,7 +31,8 @@ CREATE TABLE `comments` (
   `comment` varchar(255) NOT NULL,
   `profpic` varchar(32) NOT NULL,
   `name` varchar(32) NOT NULL,
-  `postid` int(11) NOT NULL
+  `postid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,15 +64,6 @@ CREATE TABLE `posts` (
   `reports` int(11) NOT NULL,
   `datereported` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`postid`, `userpost`, `submittext`, `sender`, `senderpic`, `hrs`, `userpostid`, `reports`, `datereported`) VALUES
-(1, NULL, 'this is a post', 'Jose Maria', 'jm.jpg', '2016-10-02 12:48:17', 12100003, 0, '0000-00-00 00:00:00'),
-(2, NULL, 'this is a post\r\nthis is a postthis is a postthis is a postthis is a postthis is a post\r\nthis is a postthis is a postthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a post\r\nthis is a p', 'Jose Maria', 'jm.jpg', '2016-10-02 12:49:08', 12100003, 0, '0000-00-00 00:00:00'),
-(3, NULL, 'this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post this is a post ', 'Jose Maria', 'jm.jpg', '2016-10-02 12:49:24', 12100003, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -135,7 +127,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `limitreport`
 --
