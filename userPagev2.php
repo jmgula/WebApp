@@ -150,6 +150,8 @@
 							$idofpost = $row['postid'];
 							$query2 = mysql_query("SELECT * FROM comments WHERE postid = $idofpost");
 							$exists = mysql_num_rows($query2);
+							$query3 = mysql_query("SELECT * FROM likes WHERE postid = $idofpost");
+							$exists2 = mysql_num_rows($query3);
 
 
 							if ($id == $tablepostid) {
@@ -163,6 +165,8 @@
 										Print '
 										</div>
 										<ul class="list-inline list-unstyled interact-sec">
+												<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>
+												<li>|</li>
 												<li><a href="#viewComments" onclick="viewcomm('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="View Comments"><span class="fa fa-comments">'; echo " " . $exists; Print '</span></a></li>
 												<li>|</li>
 												<li><a href="editpost.php?postid='.$row['postid'].'" data-toggle="modal" data-hover="tooltip" data-placement="bottom" data-original-title="Edit"><span class="fa fa-pencil"></span></a></li>
@@ -183,6 +187,8 @@
 										Print '
 										</div>
 										<ul class="list-inline list-unstyled interact-sec">
+												<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>
+												<li>|</li>
 												<li><a href="#viewComments" onclick="viewcomm('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="View Comments"><span class="fa fa-comments">'; echo " " . $exists; Print '</span></a></li>
 												<li>|</li>
 												<li><a href="#report" onclick="report('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Report"><span class="fa fa-exclamation-triangle"></span></a></li>
@@ -204,6 +210,11 @@
 						  {
 						  	window.location.assign("deletepost.php?id=" + id);
 						  }
+						}
+
+						function like(id)
+						{
+							window.location.assign("like.php?id=" + id);
 						}
 
 						function report(id)
