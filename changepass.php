@@ -2,9 +2,9 @@
 
 session_start();
 $id = $_SESSION['userid'];
-$oldpass = mysql_real_escape_string($_POST['oldpassword']);
-$newpass = mysql_real_escape_string($_POST['newpassword']);
-$confpass = mysql_real_escape_string($_POST['confnewpass']);
+$oldpass = md5($_POST['oldpassword']);
+$newpass = md5($_POST['newpassword']);
+$confpass = md5($_POST['confnewpass']);
 
 mysql_connect("localhost", "root", "") or die(mysql_error());
 mysql_select_db("webapp") or die("Cannot connect to database");
@@ -27,7 +27,7 @@ if ($exists > 0) {
 				Print '<script>window.location.assign("userPagev2.php");</script>';
 			}
 			else {
-			mysql_query("UPDATE users SET password='$newpass' WHERE userid='$id'");
+			mysql_query("UPDATE users SET password= '$newpass' WHERE userid='$id'");
 			Print '<script>alert("Password changed!");</script>';
 			Print '<script>window.location.assign("userPagev2.php");</script>';
 			}

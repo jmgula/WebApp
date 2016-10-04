@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2016 at 05:41 AM
+-- Generation Time: Oct 04, 2016 at 10:16 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -96,11 +96,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userid`, `password`, `firstname`, `lastname`, `profpic`) VALUES
-(12100001, '12100001', 'John Mark', 'Amit', 'Amit.png'),
-(12100002, '12100002', 'Kristopher', 'Cabahug', 'Kristopher.jpg'),
-(12100003, '12100003', 'Jose Maria', 'Gula', 'jm.jpg'),
-(12100004, '12100004', 'Alec Job', 'Melchor', 'Alec.jpg'),
-(12100005, '12100005', 'Zamaickah', 'Serato', 'Zam.png');
+(12100001, '7d73bbe3784391de98b7e822202b43d3', 'John Mark', 'Amit', 'Amit.png'),
+(12100002, '1a01c9f488654879c6e70ee7cbc4098c', 'Kristopher', 'Cabahug', 'Kristopher.jpg'),
+(12100003, '2eb834ce99acc2e5f6adf2d7f526aab6', 'Jose Maria', 'Gula', 'jm.jpg'),
+(12100004, '48c5c9a944bd47a0bf96ab3639360ff0', 'Alec Job', 'Melchor', 'Alec.jpg'),
+(12100005, '48249df3d8679a6c677f2c3813f4cdaf', 'Zamaickah', 'Serato', 'Zam.png');
 
 --
 -- Indexes for dumped tables
@@ -145,7 +145,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `likes`
 --
@@ -160,7 +160,7 @@ ALTER TABLE `limitreport`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
