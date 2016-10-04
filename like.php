@@ -14,7 +14,7 @@
 			header("location: userPagev2.php");
 		}else {
 			$query2 = mysql_query("INSERT INTO likes (postid,userid) VALUES ('$postid', '$id')");
-			header("location: userPagev2.php");
+			header("location: userPagev2.php#backHere");
 		}
 	}
 ?>

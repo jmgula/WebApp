@@ -183,7 +183,7 @@
 														if ($id == $tableuserid) {
 															Print '
 																<ul class="list-inline list-unstyled interact-sec">
-																		<li><a href="#Edit"  data-hover="tooltip" data-placement="bottom" data-original-title="Edit"><span class="fa fa-pencil"></span></a></li>
+<li><a href="editcomment.php?commentid='.$row['commentid'].'" data-hover="tooltip" data-placement="bottom" data-original-title="Edit"><span class="fa fa-pencil"></span></a></li>
 																		<li>|</li>
 																		<li><a href="#Delete"  onclick="deletecomment('.$row['commentid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Delete"><span class="fa fa-times"></span></a></li>
 																</ul>
@@ -205,6 +205,11 @@
 									  {
 									  	window.location.assign("deletecomment.php?id=" + id);
 									  }
+									}
+
+									function editcomment(id)
+									{
+									  	window.location.assign("editcomment.php?id=" + id);
 									}
 								</script>
 
