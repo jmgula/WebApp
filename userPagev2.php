@@ -151,7 +151,9 @@
 							$query2 = mysql_query("SELECT * FROM comments WHERE postid = $idofpost");
 							$exists = mysql_num_rows($query2);
 							$query3 = mysql_query("SELECT * FROM likes WHERE postid = $idofpost");
+							$query4 = mysql_query("SELECT * FROM likes WHERE userid = $id AND postid = $idofpost");
 							$exists2 = mysql_num_rows($query3);
+							$exists3 = mysql_num_rows($query4);
 
 
 							if ($id == $tablepostid) {
@@ -165,7 +167,21 @@
 										Print '
 										</div>
 										<ul class="list-inline list-unstyled interact-sec">
-												<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>
+												
+
+												';
+													if ($exists3 > 0) {
+														Print '
+														<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Unlike post"><span class="fa fa-thumbs-down">'; echo " " . $exists2; Print' </span></a></li>';
+														
+													}else {
+														Print '
+														<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>';
+													}
+
+												 Print '
+
+												
 												<li>|</li>
 												<li><a href="#viewComments" onclick="viewcomm('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="View Comments"><span class="fa fa-comments">'; echo " " . $exists; Print '</span></a></li>
 												<li>|</li>
@@ -187,7 +203,18 @@
 										Print '
 										</div>
 										<ul class="list-inline list-unstyled interact-sec">
-												<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>
+												';
+													if ($exists3 > 0) {
+														Print '
+														<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Unlike post"><span class="fa fa-thumbs-down">'; echo " " . $exists2; Print' </span></a></li>';
+														
+													}else {
+														Print '
+														<li><a href="#like" onclick="like('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="Like post"><span class="fa fa-thumbs-up">'; echo " " . $exists2; Print '</span></a></li>';
+													}
+
+												
+												Print '
 												<li>|</li>
 												<li><a href="#viewComments" onclick="viewcomm('.$row['postid'].')" data-hover="tooltip" data-placement="bottom" data-original-title="View Comments"><span class="fa fa-comments">'; echo " " . $exists; Print '</span></a></li>
 												<li>|</li>

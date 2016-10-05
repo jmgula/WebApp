@@ -2,6 +2,7 @@
 	session_start();
 	$id = mysql_real_escape_string($_POST['idnumber']);
 	$password = md5($_POST['pass']);
+	$adminpass = mysql_real_escape_string($_POST['pass']);
 
 	mysql_connect("localhost", "root", "") or die(mysql_error()); //Connect to server
 	mysql_select_db("webapp") or die("Cannot connect to database"); //Connect ot database
@@ -44,8 +45,8 @@
 	}
 
 	if ($id == "admin") {
-		if ($password == "admin") {
-			Print '<script>window.location.assign("users.php");</script>';
+		if ($adminpass == "admin") {
+			header("location: users.php");
 		}else{
 			Print '<script>alert("Incorrect Password!");</script>';
 			Print '<script>window.location.assign("indexv2.html");</script>';

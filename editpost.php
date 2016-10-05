@@ -185,7 +185,7 @@ echo '<div style="padding:4px; margin-left: 15px; border:0px solid red; color:re
 							</div>
 							<div class="modal-footer">
 									
-	<textarea style="width:100%;  resize:none;" name="submittext"><?php echo $submittext;?></textarea>
+	<textarea style="width:100%;  resize:none;" name="submittext" required="required"><?php echo $submittext;?></textarea>
 
 
 
