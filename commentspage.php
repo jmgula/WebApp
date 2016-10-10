@@ -168,6 +168,7 @@
 										$tablename = $row['name'];
 										$tablepostid = $row['postid'];
 										$tableuserid = $row['userid'];
+										$tabledate = $row['commentdate'];
 
 
 										if ($postid == $tablepostid) {
@@ -176,7 +177,8 @@
 												<div class="media">
 													<a class="pull-left" href="#"><img class="media-object" src="resource/images/'; Print $tablepic; Print '"></a>
 													<div class="media-body">
-														<strong style="color:#2E7D32">'; Print $tablename; Print '</strong><br>';
+														<strong style="color:#2E7D32">'; Print $tablename; Print '</strong>';
+														echo " ";echo date('m/d/Y', strtotime($tabledate)); echo "<br>";
 														Print $tablecomment;
 														Print '
 														</div>';
